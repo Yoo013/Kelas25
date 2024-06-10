@@ -18,7 +18,7 @@ const AuthRoutes = require("./src/controllers/auth.controller")
 app.use(express.json())
 app.use(cors({
     origin: "https://localhost:5173",
-    methods: ["GET", "POST",]
+    methods: ["GET", "POST", "PUT"]
 }));
 
 
@@ -32,8 +32,8 @@ app.get("/msg", (req, resp) => {
 
 
 //routes
-app.use("/api/users", UserRoutes)
-app.use("/api/auth", AuthRoutes)
+app.post("/api/users", UserRoutes)
+app.post("/api/auth", AuthRoutes)
 
 app.listen(PORT, () => {
     ConnectDB()
