@@ -16,7 +16,10 @@ const AuthRoutes = require("./src/controllers/auth.controller")
 
 //middlewares 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: "https://localhost:5173",
+    methods: ["GET", "POST",]
+}));
 
 
 app.get("/", (req, resp) => {
