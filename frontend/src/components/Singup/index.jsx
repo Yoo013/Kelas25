@@ -21,7 +21,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "${process.env.REACT_APP_API_URL}/api/users";
+      const url = "${process.env.REACT_APP_API_URL}/api/signup";
       const { data: res } = await axios.post(url, data);
       navigate("/login");
 
